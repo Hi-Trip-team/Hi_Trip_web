@@ -1,34 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Route, Routes } from 'react-router-dom'
+import DashboardLayout from './layouts/DashboardLayout'
+import TravelersPage from './pages/TravelersPage'
+import AnalyticsPage from './pages/AnalyticsPage'
+import PreTravelCustomersPage from './pages/pre-travel/CustomersPage'
+import PreTravelSchedulePage from './pages/pre-travel/SchedulePage'
+import DuringTravelCustomersPage from './pages/during-travel/CustomersPage'
+import DuringTravelRecommendationsPage from './pages/during-travel/REcommendationsPage'
+import DashboardPage from './pages/DashboardPage'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <Routes>
+      <Route path="/" element={<DashboardLayout />}>
+        <Route index element={<DashboardPage />} />
+        <Route path="travelers" element={<TravelersPage />} />
+        <Route path="analytics" element={<AnalyticsPage />} />
+        <Route path="pre-travel/customers" element={<PreTravelCustomersPage />} />
+        <Route path="pre-travel/schedule" element={<PreTravelSchedulePage />} />
+        <Route path="during-travel/customers" element={<DuringTravelCustomersPage />} />
+        <Route path="during-travel/recommendations" element={<DuringTravelRecommendationsPage />} />
+      </Route>
+    </Routes>
   )
 }
 
