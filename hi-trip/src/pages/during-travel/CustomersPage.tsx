@@ -1,3 +1,5 @@
+"use client"
+
 import { useState, useMemo } from "react"
 import { Search } from "lucide-react"
 import { mockCustomers } from "../../data/mockCustomers"
@@ -16,25 +18,25 @@ export default function DuringTravelCustomersPage() {
   const getRiskStatusColor = (status: Customer["riskStatus"]) => {
     switch (status) {
       case "안전":
-        return "text-green-500"
+        return "text-success"
       case "주의":
-        return "text-yellow-500"
+        return "text-warning"
       case "위험":
-        return "text-red-500"
+        return "text-danger"
       default:
-        return "text-gray-500"
+        return "text-muted-foreground"
     }
   }
 
   const getHealthStatusColor = (value: number, type: "heartRate" | "oxygen") => {
     if (type === "heartRate") {
-      if (value < 60 || value > 100) return "text-red-500"
-      if (value < 70 || value > 90) return "text-yellow-500"
-      return "text-green-500"
+      if (value < 60 || value > 100) return "text-danger"
+      if (value < 70 || value > 90) return "text-warning"
+      return "text-success"
     } else {
-      if (value < 95) return "text-red-500"
-      if (value < 97) return "text-yellow-500"
-      return "text-green-500"
+      if (value < 95) return "text-danger"
+      if (value < 97) return "text-warning"
+      return "text-success"
     }
   }
 
@@ -68,7 +70,7 @@ export default function DuringTravelCustomersPage() {
         </div>
         <button
           onClick={() => {}}
-          className="px-6 py-2 rounded-lg bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors"
+          className="px-6 py-2 rounded-lg bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
         >
           검색
         </button>

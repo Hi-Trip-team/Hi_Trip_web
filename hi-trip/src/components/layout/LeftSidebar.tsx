@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom"
 import { ChevronDown, ChevronRight } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { NAVIGATION, type NavigationItem } from "@/constants/navigation"
+import logo from "@/assets/logos/main-logo.svg";
 
 function NavItem({ item, depth = 0 }: { item: NavigationItem; depth?: number }) {
   const [isOpen, setIsOpen] = useState(true)
@@ -10,12 +11,12 @@ function NavItem({ item, depth = 0 }: { item: NavigationItem; depth?: number }) 
 
   if (hasChildren) {
     return (
-      <div className="min-w-40">
+      <div>
         <button
           onClick={() => setIsOpen(!isOpen)}
           className={cn(
             "flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm font-semibold transition-colors",
-            "text-foreground hover:bg-secondary",
+            "text-foreground hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none",
             depth > 0 && "pl-6",
           )}
         >
@@ -55,11 +56,12 @@ function NavItem({ item, depth = 0 }: { item: NavigationItem; depth?: number }) 
   )
 }
 
-export default function Sidebar() {
+export default function LeftSidebar() {
   return (
-    <aside className="w-64 border-r border-border bg-card">
+    <aside className="min-w-60 border-r border-border bg-card">
       <div className="flex h-16 items-center border-b border-border px-6">
-        <h1 className="text-xl font-bold">여행 관리</h1>
+        <img src={logo} alt="Logo" className="h-8 w-8 mr-2" />
+        <h1 className="text-xl font-bold">Hi-Trip</h1>
       </div>
       <nav className="space-y-1 p-4">
         {NAVIGATION.map((item) => (

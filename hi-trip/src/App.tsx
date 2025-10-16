@@ -5,8 +5,8 @@ import AnalyticsPage from './pages/AnalyticsPage'
 import PreTravelCustomersPage from './pages/pre-travel/CustomersPage'
 import PreTravelSchedulePage from './pages/pre-travel/SchedulePage'
 import DuringTravelCustomersPage from './pages/during-travel/CustomersPage'
-import DuringTravelRecommendationsPage from './pages/during-travel/REcommendationsPage'
 import DashboardPage from './pages/DashboardPage'
+import DuringTravelRecommendationsPage from './pages/during-travel/RecommendationsPage'
 
 function App() {
   return (
