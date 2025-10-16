@@ -58,7 +58,7 @@ function NavItem({ item, depth = 0 }: { item: NavigationItem; depth?: number }) 
 
 export default function LeftSidebar() {
   return (
-    <aside className="min-w-60 border-r border-border bg-card">
+    <aside className="min-w-60 shrink-0 border-r border-border bg-card overflow-auto">
       <div className="flex h-16 items-center border-b border-border px-6">
         <img src={logo} alt="Logo" className="h-8 w-8 mr-2" />
         <h1 className="text-xl font-bold">Hi-Trip</h1>

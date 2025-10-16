@@ -8,7 +8,7 @@ export interface Customer {
   chat: {
     state: "O" | "X"
   }
-  riskStatus: "정상" | "주의" | "위험"
+  riskStatus: "안전" | "주의" | "위험"
   healthStatus: {
     heartRate: number
     oxygenSaturation: number

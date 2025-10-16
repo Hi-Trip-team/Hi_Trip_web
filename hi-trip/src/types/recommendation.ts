@@ -9,7 +9,7 @@ export interface PlaceRecommendation {
   imageUrl: string
   recommendationLevel: RecommendationLevel
   specialNote: string
-  advantage: string
+  advantage?: string
   category: string
 }
 

@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+
 /* Tailwind v4 공식 방식 */
 /* 디자인 토큰 정의 */
 @theme inline {
@@ -74,7 +75,15 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
+
+    scrollbar-color: var(--color-slate-700) transparent;
+    scrollbar-width: thin;
+  }
+
+  *:not(body)::-webkit-scrollbar {
+    display: none;
   }
 }

@@ -5,17 +5,20 @@ import { Outlet } from "react-router-dom";
 
 export default function DashboardLayout() {
   return (
-    <div className="flex min-h-screen bg-background">
+    <div className="flex min-h-screen max-h-screen bg-background">
       <LeftSidebar />
 
-      <div className="flex-1 flex flex-col">
+      <div className="flex-1 flex min-w-0 flex-col">
         <Header />
-        <main className="flex-1 p-6">
-          <Outlet />
-        </main>
-      </div>
 
-      <RightSidebar />
+        <div className="flex-1 flex min-h-0">
+          <main className="flex-1 min-w-160 p-6 overflow-y-auto">
+            <Outlet />
+          </main>
+
+          <RightSidebar />
+        </div>
+      </div>
     </div>
   )
 }
