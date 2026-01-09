@@ -1,0 +1,13 @@
+export { CalendarWidget } from "./CalendarWidget"
+export { LatestCustomers} from "./LatestCustomers"
+export { UpcomingTrips } from "./UpcommingTrip"
+export { ActionButton } from "./ActionButton"
+
+// export { WeatherWidget } from "./WeatherWidget"
+// export { QuoteWidget } from "./QuoteWidget"
+// export { ToDoWidget } from "./ToDoWidget"
+// export { NewsWidget } from "./NewsWidget"
+// export { StockWidget } from "./StockWidget"
+// export { TrafficWidget } from "./TrafficWidget"
+// export { CovidStatsWidget } from "./CovidStatsWidget"
+// export { EventWidget } from "./EventWidget"     
